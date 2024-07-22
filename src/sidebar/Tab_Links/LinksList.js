@@ -137,7 +137,11 @@ class LinksList extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (this.props.scrollPos) {
-            document.querySelector(".edit-post-sidebar").scrollTop = this.props.scrollPos;
+            let element = document.querySelector(".editor-sidebar")
+            if (element === null) {
+                element = document.querySelector(".edit-post-sidebar")
+            }
+            element.scrollTop = this.props.scrollPos;
             this.props.updateScrollPos(0);
         }
     }

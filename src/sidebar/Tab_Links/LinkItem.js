@@ -15,7 +15,11 @@ class LinkItem extends React.Component {
 
         // Saving scroll position of links list to be able to return 
         // to the same place after suggestions will be closed
-        const scrollPos = document.querySelector(".edit-post-sidebar").scrollTop;
+        let element = document.querySelector(".editor-sidebar")
+        if (element === null) {
+            element = document.querySelector(".edit-post-sidebar")
+        }
+        const scrollPos = element.scrollTop;
 
         showSuggestions({ rawKeywords: sugg, linkItem: linkObj }, scrollPos);
     }

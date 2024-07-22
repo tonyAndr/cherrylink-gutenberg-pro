@@ -35,7 +35,8 @@ export class SuggestionList extends React.Component {
         if (suggestions.multi === undefined || (suggestions.multi.length === 0 && suggestions.single.length === 0)) {
             return (
                 <>
-                    <p className="suggestion-hint">Для данной ссылки подсказок не найдено. Попробуйте изменить <a target="_blank" href={window.location.origin + "/wp-admin/options-general.php?page=cherrylink-pro"}>настройки индексирования</a>.</p>
+                    <p className="suggestion-hint">Для данной ссылки подсказок не найдено. Попробуйте изменить <a target="_blank" href={window.location.origin + "/wp-admin/options-general.php?page=cherrylink-pro"}>настройки сканирования</a>.</p>
+                    <p className="suggestion-hint">Для получения бОльшего количества подсказок рекомендуем включить пункт <strong>Использовать стемминг и стоп-слова</strong> в настройках сканирования.</p>
                     <p className="suggestion-hint">Если вы только что преобразовали статью из классического редактора в блоки, ее необходимо сохранить и обновить страницу.</p>
                 </>
             )
